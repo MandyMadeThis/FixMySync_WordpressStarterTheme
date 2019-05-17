@@ -1,0 +1,213 @@
+// 1. CLEARFIX
+// 2. BACKGROUND COVER
+// 3. TRIANGLE
+// 4. ACCESSIBLE HIDE
+// 5. LAYOUT HELPERS
+// 6. CSS SLIDE TOGGLE
+
+//////////////////////
+//// 1. CLEARFIX /////
+//////////////////////
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+//////////////////////////////
+//// 2. BACKGROUND COVER /////
+//////////////////////////////
+@mixin background-cover {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin background-cover-top {
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin background-contain {
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+////////////////////////////////////////////////////////
+//// 3. TRIANGLE: http://bourbon.io/docs/#triangle /////
+////////////////////////////////////////////////////////
+@mixin triangle($size, $color, $direction) {
+  $width: nth($size, 1);
+  $height: nth($size, length($size));
+  $foreground-color: nth($color, 1);
+  $background-color: if(length($color) == 2, nth($color, 2), transparent);
+  height: 0;
+  width: 0;
+
+  @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+    $width: $width / 2;
+    $height: if(length($size) > 1, $height, $height/2);
+
+    @if $direction == up {
+      border-bottom: $height solid $foreground-color;
+      border-left: $width solid $background-color;
+      border-right: $width solid $background-color;
+    } @else if $direction == right {
+      border-bottom: $width solid $background-color;
+      border-left: $height solid $foreground-color;
+      border-top: $width solid $background-color;
+    } @else if $direction == down {
+      border-left: $width solid $background-color;
+      border-right: $width solid $background-color;
+      border-top: $height solid $foreground-color;
+    } @else if $direction == left {
+      border-bottom: $width solid $background-color;
+      border-right: $height solid $foreground-color;
+      border-top: $width solid $background-color;
+    }
+  } @else if ($direction == up-right) or ($direction == up-left) {
+    border-top: $height solid $foreground-color;
+
+    @if $direction == up-right {
+      border-left:  $width solid $background-color;
+    } @else if $direction == up-left {
+      border-right: $width solid $background-color;
+    }
+  } @else if ($direction == down-right) or ($direction == down-left) {
+    border-bottom: $height solid $foreground-color;
+
+    @if $direction == down-right {
+      border-left:  $width solid $background-color;
+    } @else if $direction == down-left {
+      border-right: $width solid $background-color;
+    }
+  } @else if ($direction == inset-up) {
+    border-color: $background-color $background-color $foreground-color;
+    border-style: solid;
+    border-width: $height $width;
+  } @else if ($direction == inset-down) {
+    border-color: $foreground-color $background-color $background-color;
+    border-style: solid;
+    border-width: $height $width;
+  } @else if ($direction == inset-right) {
+    border-color: $background-color $background-color $background-color $foreground-color;
+    border-style: solid;
+    border-width: $width $height;
+  } @else if ($direction == inset-left) {
+    border-color: $background-color $foreground-color $background-color $background-color;
+    border-style: solid;
+    border-width: $width $height;
+  }
+}
+
+/////////////////////////////
+//// 4. ACCESSIBLE HIDE /////
+/////////////////////////////
+@mixin accessibleHide {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap; /* 1 */
+}
+
+
+///////////////////////////
+//// 5. LAYOUT HELPERS/////
+///////////////////////////
+@mixin layout-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// vertical centring, when flexbox or padding aren't options. 
+// Takes one argument of $height which is the total height of the element that will be vertically centred (including margins & padding)
+@mixin layout-heightCenter($height: 100%) {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: $height;
+}
+
+// Same as above, but removes horizontal centring
+@mixin layout-heightVerticalOnlyCenter($height: 100%) {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  height: $height;
+}
+
+// Flexbox Layout mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+@mixin flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-betweenBase {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+@mixin flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+//////////////////////////////
+//// 6. CSS SLIDE TOGGLE /////
+/////////////////////////////
+@mixin css-slideToggle {
+  transition: $nice-trans;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+}
+
+@mixin css-slideToggle--open {
+  visibility: visible;
+  opacity: 1;
+  max-height: 5000px;
+}

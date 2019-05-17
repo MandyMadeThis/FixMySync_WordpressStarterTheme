@@ -1,0 +1,14 @@
+@import "init/normalize";
+@import "init/variables";
+@import "init/mixins";
+@import "init/mediaQueries";
+@import "init/grid";
+@import "init/base";
+@import "init/typography";
+
+
+@import "components/header";
+@import "components/footer";
+@import "components/hero";
+@import "components/about";
+@import "components/contact";

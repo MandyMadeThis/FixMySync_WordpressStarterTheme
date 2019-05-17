@@ -1,0 +1,117 @@
+.footer-iconList {
+  margin: 35px 0 0;
+  padding: 0;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    position: relative;
+    margin: 0 15px;
+    line-height: 0;
+    text-align: center;
+
+    @media only screen and (max-width: 600px) {
+      margin: 0 10px;
+    }
+
+    &:hover,
+    &:focus {
+      a::before {
+        background-color: $cream;
+      }
+
+      .fas,
+      .fab {
+        transition: all 400ms;
+        transform: rotate(-360deg) scale(1.3);
+      }
+
+      .fa-file {
+        color: #7ba9d6;
+      }
+
+      .fa-linkedin-in {
+        color: #2D6AA7;
+      }
+
+      .fa-vimeo-v {
+        color: #49A1E6;
+      }
+
+      .fa-imdb {
+        color: #EBBF46;
+      }
+
+      .fa-twitter {
+        color: #4795E9;
+      }
+
+      .fa-envelope {
+        color: #C95447;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 0;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 50px;
+      transition: all 400ms;
+      background-color: #1f2027;
+      transform: rotate(45deg);
+
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
+    }
+
+    i {
+      color: $cream;
+      position: absolute;
+      transform-origin: 50% 50%;
+      font-size: 24px;
+      top: 25%;
+      left: 14px;
+
+      @media only screen and (max-width: 600px) {
+        position: static;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &.diamond a:before {
+    transform: rotate(-45deg);
+  }
+
+  &.rise-up a:hover,
+  &.rise-up a:focus {
+    transition: transform 0.4s ease-out;
+    transform: translateY(-15px);
+  }
+
+  &.spin-icon a:hover:after,
+  &.spin-icon a:focus:after {
+    transition: transform 0.4s ease-out;
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52), 0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78), 0 0 54px rgba(30, 132, 242, 0.92);
+  }
+
+  to {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58), 0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88), 0 0 60px rgba(30, 132, 242, 1);
+  }
+}

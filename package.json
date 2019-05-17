@@ -1,0 +1,36 @@
+{
+  "name": "fixmysync_wordpress_theme",
+  "version": "1.0.0",
+  "description": "Wordpess Theme based on Underscores",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MandyMadeThis/FixMySync_Theme.git"
+  },
+  "author": "Mandy Thomson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MandyMadeThis/FixMySync_Theme/issues"
+  },
+  "homepage": "https://github.com/MandyMadeThis/FixMySync_Theme#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.26.5",
+    "browserify": "^16.2.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "require-dir": "^1.2.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.11.1"
+  }
+}

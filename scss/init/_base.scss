@@ -1,0 +1,72 @@
+body {
+  background-color: $teal;
+  border-left: 20px solid $cream;
+  border-right: 20px solid $cream;
+  scrollbar-base-color: $teal;
+  scrollbar-3dlight-color: $teal;
+  scrollbar-highlight-color: $teal;
+  scrollbar-track-color: $cream;
+  scrollbar-arrow-color: $teal;
+  scrollbar-shadow-color: $teal;
+  scrollbar-dark-shadow-color: $teal;
+  scrollbar-color: $teal;
+  scrollbar-width: 12px;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -moz-appearance: scrollbartrack-vertical;
+    background: $cream;
+    border-radius: 0px;
+  }
+
+  &::-webkit-scrollbar-thumb:window-inactive {
+    border-radius: 0px;
+    background: $teal;
+  }
+    
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background: $teal;
+  }
+
+  &::before, &::after {
+    content: "";
+    position: fixed;
+    background-color: $cream;
+    left: 0;
+    right: 0;
+    height: 20px;
+    z-index: 999;
+  }
+
+  &::before {top: 0;}
+  &::after {bottom: 0;}
+}
+
+::-moz-selection {
+  background: $teal;
+  color: $cream;
+}
+  
+::selection {
+  background: $teal;
+  color: $cream;
+}
+  
+
+section {
+  padding: 20px 10px;
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  .websites & {
+    flex-direction: column;
+    height: 146vh;
+  }
+}

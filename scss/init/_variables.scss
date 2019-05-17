@@ -1,0 +1,72 @@
+///////////////////////
+//// BASE SETTINGS ////
+///////////////////////
+$base-font-size: 17px;
+$gutter: 20px;
+$container-width: 1100px;
+
+/////////////////////
+//// BREAKPOINTS ////
+/////////////////////
+$breakpoints: (
+  palm: '(max-width: 600px)',
+  nav: '(max-width: 950px)',
+  portable: '(max-width: 1023px)',
+  lap: '(min-width: 601px) and (max-width: 1366px)',
+  desk: '(min-width: 1024px)'
+);
+
+//////////////////
+//// COLOURS ////
+/////////////////
+$teal: #006075;
+$teal-dark: #004757;
+$yellow: #F2AE30;
+$grey: #383838;
+$cream: #F6F2E6;
+$white: #FFFFFF;
+$black: #1A1A1A;
+
+$primary: $teal; 
+$secondary: $yellow;
+$tertiary: $teal-dark;
+
+$error-color: #B91A0E;
+$warning-color: #ED9213;
+$success-color: #22CD73;
+$notice-color: #F5FCFF;
+
+// LINK COLORS
+$base-link-color: $primary;
+$hover-link-color: $tertiary;
+
+///////////////////////////////
+//// TYPEPOGRAPHY SETTINGS ////
+///////////////////////////////
+$body: 'Karla', sans-serif;
+$heading: 'Rubik', sans-serif;
+$base-line-height: 1;
+$paragraph-line-height: 1.6;
+$base-font-color: $grey;
+
+/////////////////
+//// FORMS ////
+/////////////////
+$input-border: 1px solid $grey;
+$input-focus-border: 2px solid $primary;
+$input-error-border: 2px solid $error-color;
+
+/////////////////////////////
+//// TRANSITION SETTINGS ////
+/////////////////////////////
+
+// GLOBAL TRANSITION DURATION
+$trans-dur: 0.2s;
+
+// EASING
+$base-ease: ease-in-out;
+$nice-ease: cubic-bezier(0.4, 0, 0.2, 1);
+$bounce-ease: cubic-bezier(0.45, -0.6, 0.605, 1.565);
+$base-trans: all $base-ease $trans-dur;
+$nice-trans: all $nice-ease $trans-dur;
+$border-trans: border-color $nice-ease $trans-dur;

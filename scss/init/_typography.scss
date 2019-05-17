@@ -1,0 +1,75 @@
+body {
+  font-family: $body;
+  font-weight: 400;
+  line-height: 1;
+  color: $grey;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+  color: $grey;
+  box-shadow: 0 3px 0 0 $yellow;
+  transition: $nice-trans;
+
+  &:hover,
+  &:focus {
+    background-color: $yellow;
+  }
+}
+
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin: 0;
+  font-family: $heading;
+  font-style: normal;
+  font-weight: 700;
+  color: $cream;
+
+  &.section-title {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .hero & {
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+  }
+}
+
+h1, .h1 {
+  font-style: italic;
+  font-weight: 900;
+  font-size: 107px;
+}
+
+h2, .h2 {font-size: 45px;}
+h3, .h3 {font-size: 35px;}
+h4, .h4 {font-size: 29px;}
+h5, .h5 {font-size: 24px;}
+h6, .h6 {font-size: 20px;}
+
+p {
+  font-size: 19px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+p + p {
+  margin-top: 30px;
+}
+
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+// Default Ordered List Styles
+ol {
+    list-style-type: decimal;
+    padding-left: 60px;
+    font-size: 110%;
+}
