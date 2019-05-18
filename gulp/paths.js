@@ -6,7 +6,7 @@ module.exports = {
     dest: './css'
   },
   scripts: {
-    watch: './js/**/*.js',
+    watch: './js/src/*.js',
     src: './js/src.js',
     dest: './js'
   },

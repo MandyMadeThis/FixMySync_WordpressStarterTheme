@@ -12,7 +12,7 @@ gulp.task('styles', function(){
       title: 'Scss Error', 
       message: "\n<%=error.message%>"
     })))
-    .pipe(autoprefixer({ browsers: ['last 3 version', '> 1%', 'IE 10'] }))
+    .pipe(autoprefixer({ browsers: ['last 3 version', 'IE 10'] }))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.styles.dest))
 })

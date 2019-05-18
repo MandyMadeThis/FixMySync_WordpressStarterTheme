@@ -8,7 +8,7 @@ var sourcemaps = require('gulp-sourcemaps')
 var babel = require('babelify')
 
 // JavaScripty Tings
-gulp.task('browserify', function () {
+gulp.task('browserify', function (done) {
   return browserify('./js/src.js')
     .transform('babelify', {presets: ["@babel/preset-env"]})
     .bundle()
@@ -18,5 +18,7 @@ gulp.task('browserify', function () {
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(gulp.dest(paths.scripts.dest));
+    
+  done();
 })
